@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: <%= ENV["USER"] %>
+  password:
+  host: localhost
+  pool: 5
+
+development:
+  <<: *default
+  database: alpha_blog_development
+
+test:
+  <<: *default
+  database: alpha_blog_test
